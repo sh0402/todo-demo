@@ -1,7 +1,6 @@
 import React from "react";
 
 export const TodoItem = ({ item, removeTask, updataTask }) => {
-  console.log(item.isComplete);
   return (
     <div className="todo-list flex-1">
       <ul className="flex flex-col gap-2">
