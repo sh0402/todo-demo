@@ -7,10 +7,14 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState();
 
+  const fnEnterkey = (e) => {
+    if (e.key === "Enter") {
+      addTask()
+    }
+  };
+
   const getTasks = async () => {
     const response = await api.get("/tasks");
-
-    // console.log("response.data", response?.data);
     setTodoList(response.data.data);
   };
 
@@ -77,6 +81,7 @@ function App() {
               className="flex-1"
               value={todoValue || ""}
               onChange={(e) => setTodoValue(e.target.value)}
+              onKeyPress={fnEnterkey}
             />
             <div className="button-group">
               <button className="btn-primary" onClick={addTask}>

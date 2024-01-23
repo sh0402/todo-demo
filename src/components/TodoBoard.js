@@ -17,6 +17,7 @@ export const TodoBoard = ({ todoList, removeTask, updataTask }) => {
             item={item}
             removeTask={removeTask}
             updataTask={updataTask}
+            key={item._id}
           />
         ))
       ) : (
